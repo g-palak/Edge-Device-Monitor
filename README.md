@@ -4,11 +4,9 @@ A real-time telemetry monitoring system demonstrating cloud↔edge device commun
 
 ## Problem Statement
 
-Build a system where:
-- Simulated edge devices send telemetry (device_id, timestamp, metric) to a cloud backend
-- Backend stores data and streams live updates to a React dashboard via WebSocket
-- Users can push configuration changes to specific devices and track their application state (pending → applied/failed)
-- A simulator script mimics real device behavior including config acknowledgment
+- Backend in Python/FastAPI: a POST endpoint that ingests telemetry from simulated edge devices (JSON: device_id, ts, metric), stores it (SQLite or Postgres is fine), and streams live updates to the frontend (WebSocket or SSE). Plus POST /devices/{id}/config that "pushes" a config to a device and tracks its applied state (pending -> applied). 
+- Frontend in React: a small dashboard showing live telemetry from 2-3 devices, plus a form to push a config change and show the round-trip. 
+- A short script that simulates the devices sending telemetry and ack-ing the config. 
 
 ---
 ## Images of the running app:
