@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #2a2a4a;
+}
+
+.App-header h1 {
+  color: #4fc3f7;
+  font-size: 2em;
+}
+
+.connection-status {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.connection-status.connected {
+  background: rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+}
+
+.connection-status.disconnected {
+  background: rgba(244, 67, 54, 0.2);
+  color: #ef5350;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+}
+
+.device-selector {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #2a2a4a;
+}
+
+.device-selector h2 {
+  color: #4fc3f7;
+  margin-bottom: 15px;
+}
+
+.device-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.device-btn {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border: 1px solid #2a2a4a;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.device-btn:hover {
+  background: #2a2a4a;
+  transform: translateY(-2px);
+}
+
+.device-btn.active {
+  background: #4fc3f7;
+  color: #1a1a2e;
+  border-color: #4fc3f7;
+}
+
+.metric-badge {
+  background: rgba(79, 195, 247, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+
+.telemetry-panel {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #2a2a4a;
+}
+
+.telemetry-panel h2 {
+  color: #4fc3f7;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.config-panel {
+  margin-top: 20px;
+}
+
+.config-panel h3 {
+  color: #81c784;
+  margin-bottom: 15px;
+}
+
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.config-form textarea {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  resize: vertical;
+}
+
+.config-form button {
+  background: #4fc3f7;
+  color: #1a1a2e;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.config-form button:hover {
+  background: #29b6f6;
+  transform: translateY(-2px);
+}
+
+.configs-list {
+  margin-top: 20px;
+}
+
+.configs-list h4 {
+  color: #81c784;
+  margin-bottom: 15px;
+}
+
+.config-item {
+  background: #1a1a2e;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #4fc3f7;
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.config-header span:first-child {
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+.config-details {
+  background: #0f0f23;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.config-details pre {
+  color: #81c784;
+  font-size: 0.9em;
+}
+
+.config-timestamps {
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+  font-size: 0.85em;
+}
