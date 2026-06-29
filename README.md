@@ -10,7 +10,10 @@ Build a system where:
 - Users can push configuration changes to specific devices and track their application state (pending → applied/failed)
 - A simulator script mimics real device behavior including config acknowledgment
 
-Time-box: ~4 hours | Focus: Architecture, not polish
+---
+## Images of the running app:
+<img width="937" height="415" alt="image" src="https://github.com/user-attachments/assets/85e2e4d0-85b9-4d04-942c-d378f22eafda" />
+<img width="928" height="404" alt="image" src="https://github.com/user-attachments/assets/8c8af0ce-22e1-405e-aab1-d0bb5d6ea666" />
 
 ---
 
