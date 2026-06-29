@@ -9,6 +9,31 @@ A real-time telemetry monitoring system demonstrating cloud↔edge device commun
 - A short script that simulates the devices sending telemetry and ack-ing the config. 
 
 ---
+## Architecture:
+```METRICS FLOW (one-way stream)
+═══════════════════════════════════════════════════════════════
+  SIMULATOR ──HTTP POST /telemetry──► BACKEND ──WS broadcast──► FRONTEND
+  (every 2-5s)                       (store in      (live chart
+                                     SQLite)        updates)
+
+
+CONFIG FLOW (round-trip with state tracking)
+═══════════════════════════════════════════════════════════════
+  FRONTEND ──HTTP POST /config──► BACKEND ──WS send──► SIMULATOR
+  (user pushes                   (save as        (receives config,
+   config form)                   PENDING)        processes 1-3s)
+       ▲                                           │
+       │          WS broadcast                    │ HTTP POST /ack
+       └────────── (status update) ◄──────────────┘ (applied/failed)
+
+
+CONFIG STATES
+═══════════════════════════════════════════════════════════════
+  User pushes config ──► PENDING ──80%──► APPLIED
+                          │
+                          └──20%──► FAILED
+```
+---
 ## Images of the running app:
 <img width="937" height="415" alt="image" src="https://github.com/user-attachments/assets/85e2e4d0-85b9-4d04-942c-d378f22eafda" />
 <img width="928" height="404" alt="image" src="https://github.com/user-attachments/assets/8c8af0ce-22e1-405e-aab1-d0bb5d6ea666" />
